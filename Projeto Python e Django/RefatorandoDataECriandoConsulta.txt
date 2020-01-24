@@ -1,0 +1,22 @@
+operacoes/settings.py
+
+USE_L10N para False
+
+DATE_FORMAT = 'd/m/Y'
+
+DATE_INPUT_FORMATS = (
+    '%d/%m/%Y',
+)
+
+
+
+
+diligencias/admin.py
+implementando consulta
+
+class DiligenciaAdmin(admin.ModelAdmin):
+
+    list_display = ['nome', 'data_realizacao', 'dinheiro_apreendido']
+    search_fields = ['nome', 'data_realizacao']
+    list_filter = ['data_realizacao']
+    admin.site.register(Diligencia, DiligenciaAdmin)
